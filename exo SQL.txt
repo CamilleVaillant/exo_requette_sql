@@ -1,0 +1,240 @@
+exo SQL
+
+
+MySQL:3306/villes_tests/villes_france_free/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=villes_tests&table=villes_france_free
+
+   Affichage des lignes 0 -  4 (total de 5, traitement en 0,3133 seconde(s).) [ville_surface: 0.04... - 0.2...]
+
+
+SELECT ville_nom , ville_surface
+FROM villes_france_free
+ORDER BY ville_surface ASC
+LIMIT 5;
+
+
+ville_nom	ville_surface   	
+CASTELMORON-D'ALBRET	0.04	
+PLESSIX-BALISSON	0.08	
+VAUDHERLAND	0.09	
+LANNOY	0.18	
+MALLIEVRE	0.2	
+
+
+MySQL:3306/villes_tests/villes_france_free/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=villes_tests&table=villes_france_free
+
+   Affichage des lignes 0 - 14 (total de 15, traitement en 0,0119 seconde(s).) [ville_population_2010: 2243833... - 164532...]
+
+
+SELECT ville_code_postal , ville_population_2010
+FROM villes_france_free
+ORDER BY ville_population_2010 DESC
+LIMIT 15;
+
+
+ville_code_postal	ville_population_2010   	
+75001-75002-75003-75004-75005-75006-75007-75008-75...	2243833	
+13001-13002-13003-13004-13005-13006-13007-13008-13...	850726	
+69001-69002-69003-69004-69005-69006-69007-69008-69...	484344	
+31000-31100-31200-31300-31400-31500	441802	
+06000-06100-06200-06300	343304	
+44000-44100-44200-44300	284970	
+67000-67100-67200	271782	
+34000-34070-34080-34090	257351	
+33000-33100-33200-33300-33800	239157	
+59000-59160-59260-59777-59800	227560	
+35000-35200-35700	207178	
+51100	179992	
+76600-76610-76620	175497	
+42000-42100-42230	171260	
+83000-83100-83200	164532	
+
+
+MySQL:3306/villes_tests/villes_france_free/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=villes_tests&table=villes_france_free
+
+   Affichage des lignes 0 - 24 (total de 1855, traitement en 0,0191 seconde(s).)
+
+
+SELECT ville_departement , ville_nom 
+FROM `villes_france_free` 
+WHERE ville_nom LIKE 'P%';
+
+
+ville_departement	ville_nom	
+02	PAARS	
+22	PABU	
+35	PACE	
+61	PACE	
+38	PACT	
+89	PACY-SUR-ARMANCON	
+27	PACY-SUR-EURE	
+11	PADERN	
+81	PADIES	
+46	PADIRAC	
+88	PADOUX	
+87	PAGEAS	
+39	PAGNEY	
+54	PAGNEY-DERRIERE-BARINE	
+39	PAGNOZ	
+55	PAGNY-LA-BLANCHE-COTE	
+21	PAGNY-LA-VILLE	
+21	PAGNY-LE-CHATEAU	
+57	PAGNY-LES-GOIN	
+55	PAGNY-SUR-MEUSE	
+54	PAGNY-SUR-MOSELLE	
+64	PAGOLLE	
+65	PAILHAC	
+07	PAILHARES	
+15	PAILHEROLS	
+
+MySQL:3306/villes_tests/villes_france_free/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=villes_tests&table=villes_france_free
+
+   Affichage des lignes 0 - 101 (total de 102, traitement en 0,3199 seconde(s).)
+
+
+SELECT ville_departement, SUM(ville_population_2012)
+FROM `villes_france_free`
+GROUP BY ville_departement;
+
+
+ville_departement	SUM(ville_population_2012)	
+01	581700	
+02	540200	
+03	343100	
+04	158000	
+05	133900	
+06	1083900	
+07	311700	
+08	285600	
+09	149300	
+10	301500	
+11	348900	
+12	275200	
+13	1965400	
+14	678500	
+15	148200	
+16	351300	
+17	612100	
+18	313500	
+19	243300	
+21	522300	
+22	581700	
+23	124100	
+24	409200	
+25	522100	
+26	477100	
+27	576900	
+28	423500	
+29	890900	
+2A	141700	
+2B	161300	
+30	694800	
+31	1219100	
+32	185300	
+33	1422100	
+34	1019600	
+35	968600	
+36	232300	
+37	585200	
+38	1188700	
+39	260900	
+40	373500	
+41	326500	
+42	742400	
+43	221500	
+44	1255300	
+45	651600	
+46	173300	
+47	326200	
+48	77300	
+49	775400	
+50	497700	
+51	567800	
+52	187200	
+53	302600	
+54	730900	
+55	195700	
+56	709700	
+57	1042700	
+58	220800	
+59	2565600	
+60	799800	
+61	292800	
+62	1459900	
+63	628700	
+64	648100	
+65	228300	
+66	441100	
+67	1091000	
+68	745500	
+69	1690700	
+70	238600	
+71	554400	
+72	560500	
+73	409200	
+74	716500	
+75	2211000	
+76	1248200	
+77	1303500	
+78	1406200	
+79	365500	
+80	569800	
+81	371300	
+82	235600	
+83	1001900	
+84	538200	
+85	616800	
+86	424100	
+87	373500	
+88	381500	
+89	343300	
+90	141900	
+91	1205900	
+92	1549600	
+93	1506600	
+94	1310900	
+95	1165500	
+971	449272	
+972	394173	
+973	229040	
+974	821136	
+
+975	6080	
+976	212645	
+
+
+MySQL:3306/villes_tests/villes_france_free/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=villes_tests&table=villes_france_free
+
+   Affichage des lignes 0 - 24 (total de 429, traitement en 0,0305 seconde(s).)
+
+
+SELECT ville_nom 
+FROM `villes_france_free` 
+WHERE ville_population_1999 > 20000;
+
+
+ville_nom	
+OYONNAX	
+BOURG-EN-BRESSE	
+SOISSONS	
+LAON	
+SAINT-QUENTIN	
+MONTLUCON	
+VICHY	
+MOULINS	
+GAP	
+GRASSE	
+VALLAURIS	
+ANTIBES	
+CANNES	
+LE CANNET	
+CAGNES-SUR-MER	
+MENTON	
+SAINT-LAURENT-DU-VAR	
+NICE	
+CHARLEVILLE-MEZIERES	
+SEDAN	
+TROYES	
+CARCASSONNE	
+NARBONNE	
+RODEZ	
+MILLAU	
