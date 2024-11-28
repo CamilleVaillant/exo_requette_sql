@@ -238,3 +238,36 @@ CARCASSONNE
 NARBONNE	
 RODEZ	
 MILLAU	
+
+
+exercice2-6 
+UPDATE `villes_france_free`
+SET ville_longitude_dms = REPLACE(ville_longitude_dms, '+', '*')
+
+
+exercice2-7
+SELECT REVERSE(ville_nom)
+FROM `villes_france_free`
+WHERE ville_departement > 97
+
+
+exercice 8
+SELECT departement_nom, ville_nom, ville_surface
+FROM villes_france_free
+INNER JOIN departement
+ON ville_departement = departement_code
+ORDER BY ville_surface DESC
+LIMIT 5
+
+exercice 9
+
+SELECT departement_nom, SUM(ville_population_2010)
+FROM departement
+INNER JOIN villes_france_free
+ON ville_nom = departement_nom
+ORDER BY ville_population_2010 DESC
+LIMIT 5
+
+je sais que je suis pas loin mais je bloque donc je passe au suivant
+
+
